@@ -15,15 +15,15 @@ spring:
       - id: hello
         uri: http://localhost:8084
         predicates:
-        - Path=/hello/**
+          - Path=/hello/**
         filters:
-        - RewritePath=/hello/(?<path>.*), /$\{path}
+          - RewritePath=/hello/(?<path>.*), /$\{path}
       - id: world
         uri: lb://world
         predicates:
-        - Path=/world/**
+          - Path=/world/**
         filters:
-        - RewritePath=/world/(?<path>.*), /$\{path}
+          - RewritePath=/world/(?<path>.*), /$\{path}
         
 management:
   endpoints:
