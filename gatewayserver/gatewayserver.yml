@@ -13,7 +13,7 @@ spring:
     gateway:
       routes:
       - id: hello
-        uri: http://localhost:8084
+        uri: http://localhost:8081
         predicates:
           - Path=/hello/**
         filters:
