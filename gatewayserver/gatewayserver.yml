@@ -18,12 +18,14 @@ spring:
           - Path=/product/**, /product
         filters:
           - RewritePath=/product/(?<path>.*), /$\{path}
+          - RewritePath=/product, /
       - id: review
         uri: lb://review
         predicates:
           - Path=/review/**, /review
         filters:
           - RewritePath=/review/(?<path>.*), /$\{path}
+          - RewritePath=/review, /
         
 management:
   endpoints:
