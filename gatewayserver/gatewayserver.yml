@@ -15,13 +15,13 @@ spring:
       - id: product
         uri: lb://product
         predicates:
-          - Path=/product/**
+          - Path=/product/**, /product
         filters:
           - RewritePath=/product/(?<path>.*), /$\{path}
       - id: review
         uri: lb://review
         predicates:
-          - Path=/review/**
+          - Path=/review/**, /review
         filters:
           - RewritePath=/review/(?<path>.*), /$\{path}
         
